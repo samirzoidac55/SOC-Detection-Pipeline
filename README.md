@@ -62,7 +62,6 @@ The lab consists of three virtual machines running on a VirtualBox host-only net
 - Discovered and noted a packet-truncation warning ("IPv4 datagram length > captured length") affecting content-based rule matching.
 
 ## Roadmap / Future Work (NOT YET BUILT)
-- Wazuh Active Response for automated IP blocking (SOAR-lite)
 - Wazuh File Integrity Monitoring for persistence/defense evasion detection (T1053, T1098, T1070)
 - TheHive + Cortex for incident case management
 - Azure cloud migration
