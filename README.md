@@ -2,6 +2,8 @@
 
 A self-hosted SOC detection pipeline mapping real attack traffic to MITRE ATT&CK using Snort IDS + Wazuh SIEM, with automated email/PDF incident alerting.
 
+(Verifying Sync)
+
 ## Tech Stack
 ![Snort 3](https://img.shields.io/badge/Snort-3-blue)
 ![Wazuh](https://img.shields.io/badge/Wazuh-SIEM-brightgreen)
