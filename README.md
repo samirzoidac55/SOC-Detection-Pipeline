@@ -3,11 +3,17 @@
 A self-hosted SOC detection pipeline mapping real attack traffic to MITRE ATT&CK using Snort IDS + Wazuh SIEM, with automated email/PDF incident alerting.
 
 ## Tech Stack
-![Snort 3](https://img.shields.io/badge/Snort-3-blue)
-![Wazuh](https://img.shields.io/badge/Wazuh-SIEM-brightgreen)
-![MITRE ATT&CK](https://img.shields.io/badge/MITRE-ATT&CK-red)
-![Ubuntu](https://img.shields.io/badge/Ubuntu-Server%2FDesktop-orange)
-![Postfix](https://img.shields.io/badge/Postfix-Alerting-yellow)
+<div align="center">
+  <img src="https://www.snort.org/assets/img/snort-logo.png" alt="Snort 3" height="50" />
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://documentation.wazuh.com/assets/img/logo.png" alt="Wazuh" height="50" />
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://attack.mitre.org/images/mitre_attack_logo.png" alt="MITRE ATT&CK" height="50" />
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://assets.ubuntu.com/v1/49a1a858-ubuntu-logo.svg" alt="Ubuntu" height="50" />
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="http://www.postfix.org/images/postfix-logo.jpg" alt="Postfix" height="50" />
+</div>
 
 ## Architecture Overview
 The lab consists of three virtual machines running on a VirtualBox host-only network (`192.168.56.x`):
