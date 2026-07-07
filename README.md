@@ -2,8 +2,6 @@
 
 A self-hosted SOC detection pipeline mapping real attack traffic to MITRE ATT&CK using Snort IDS + Wazuh SIEM, with automated email/PDF incident alerting.
 
-(Verifying Sync)
-
 ## Tech Stack
 ![Snort 3](https://img.shields.io/badge/Snort-3-blue)
 ![Wazuh](https://img.shields.io/badge/Wazuh-SIEM-brightgreen)
@@ -33,12 +31,28 @@ The lab consists of three virtual machines running on a VirtualBox host-only net
 | 100103 | 1000002 | SSH Connection Attempt | T1021.004 | Lateral Movement | Validated |
 
 ## Setup Instructions
-TODO: Add detailed installation and configuration steps.
+
+### 1. Environment Preparation
+- Install VirtualBox.
+- Create three VMs (SOC Server, Kali, Victim) on a Host-Only adapter.
+- Configure static IP addresses (e.g., `192.168.56.x/24`).
+
+### 2. SOC Server Installation
+- **Snort IDS:** Install Snort 3 and configure interface monitoring.
+- **Wazuh Manager:** Install and configure the manager to receive alerts.
+- **Postfix:** Configure SMTP for automated alert relay.
+
+### 3. Agent & Rules Configuration
+- **Wazuh Agent:** Install on the Victim machine and connect to the Manager.
+- **Snort Rules:** Copy custom rules to `/usr/local/etc/snort/rules/local.rules`.
+- **Wazuh Rules:** Add custom decoders and rules to `/var/ossec/etc/rules/local_rules.xml`.
+
+### 4. Verification
+- Use the Kali machine to generate traffic and confirm alerts appear in the Wazuh dashboard and email notifications.
 
 ## Known Issues / Lessons Learned
 - Tuned out `arp_spoof` and `port_scan` false positives from Snort's built-in inspectors to reduce noise.
 - Discovered and noted a packet-truncation warning ("IPv4 datagram length > captured length") affecting content-based rule matching.
-- Removed the SQL injection rule; it requires a functional vulnerable web application for meaningful testing, which is out of scope for a simple `curl` request.
 
 ## Roadmap / Future Work (NOT YET BUILT)
 - MITRE T1110 Brute Force detection (SSH)
@@ -47,13 +61,20 @@ TODO: Add detailed installation and configuration steps.
 - TheHive + Cortex for incident case management
 - Azure cloud migration
 
-## Screenshots
+## Project Screenshots
+
+### Network Architecture
 ![Network Architecture](screenshots/00_architecture.png)
+
+### Attack Simulation
 ![ICMP Attack](screenshots/01_icmp_attack.png)
 ![TCP Scan Attack](screenshots/02_tcp_scan_attack.png)
 ![SSH Attack](screenshots/03_ssh_attack.png)
+
+### Detection & Logs
 ![Snort Logs](screenshots/04_snort_logs.png)
 ![Wazuh Alerts](screenshots/05_wazuh_alerts.png)
+
+### Incident Alerting (SMTP/PDF)
 ![Email Alert](screenshots/06_email_alert.png)
 ![PDF Report](screenshots/07_pdf_report.png)
- 
