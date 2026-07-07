@@ -35,6 +35,7 @@ The lab consists of three virtual machines running on a VirtualBox host-only net
 | 100101 | 1000001 | ICMP Ping | T1046 | Discovery | Validated |
 | 100102 | 1000003 | TCP Scan | T1046 | Discovery | Validated |
 | 100103 | 1000002 | SSH Connection Attempt | T1021.004 | Lateral Movement | Validated |
+| 100105 | N/A | SSH Brute Force | T1110 | Credential Access | Validated |
 
 ## Setup Instructions
 
@@ -61,7 +62,6 @@ The lab consists of three virtual machines running on a VirtualBox host-only net
 - Discovered and noted a packet-truncation warning ("IPv4 datagram length > captured length") affecting content-based rule matching.
 
 ## Roadmap / Future Work (NOT YET BUILT)
-- MITRE T1110 Brute Force detection (SSH)
 - Wazuh Active Response for automated IP blocking (SOAR-lite)
 - Wazuh File Integrity Monitoring for persistence/defense evasion detection (T1053, T1098, T1070)
 - TheHive + Cortex for incident case management
