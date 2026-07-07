@@ -54,3 +54,4 @@ TODO: Add detailed installation and configuration steps.
 ![Wazuh Alerts](screenshots/05_wazuh_alerts.png)
 ![Email Alert](screenshots/06_email_alert.png)
 ![PDF Report](screenshots/07_pdf_report.png)
+ 
