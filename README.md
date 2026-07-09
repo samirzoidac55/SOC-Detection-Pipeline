@@ -74,7 +74,7 @@ The lab consists of three virtual machines running on a VirtualBox host-only net
 ### Attack Simulation
 ![ICMP Attack](screenshots/01_icmp_attack.png)
 ![TCP Scan Attack](screenshots/02_tcp_scan_attack.png)
-![SSH Attack](screenshots/03_ssh_attack.png)
+
 
 ### Detection & Logs
 ![Snort Logs](screenshots/04_snort_logs.png)
