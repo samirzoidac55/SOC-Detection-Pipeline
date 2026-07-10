@@ -6,13 +6,11 @@ A self-hosted SOC detection pipeline mapping real attack traffic to MITRE ATT&CK
 <div align="center">
   <img src="Assets/snort-logo.jpeg" alt="Snort 3" height="50" />
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://documentation.wazuh.com/assets/img/logo.png" alt="Wazuh" height="50" />
+  <img src="Assets/wazuh-logo.png" alt="Wazuh" height="50" />
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://attack.mitre.org/images/mitre_attack_logo.png" alt="MITRE ATT&CK" height="50" />
+  <img src="Assets/mitre-logo.png" alt="MITRE ATT&CK" height="50" />
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://assets.ubuntu.com/v1/49a1a858-ubuntu-logo.svg" alt="Ubuntu" height="50" />
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  
+  <img src="Assets/postfix-logo.png" alt="Postfix" height="50" />
 </div>
 
 ## Architecture Overview
