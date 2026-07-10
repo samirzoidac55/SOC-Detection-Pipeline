@@ -4,7 +4,7 @@ A self-hosted SOC detection pipeline mapping real attack traffic to MITRE ATT&CK
 
 ## Tech Stack
 <div align="center">
-  <img src="https://www.snort.org/assets/img/snort-logo.png" alt="Snort 3" height="50" />
+  <img src="Assets/snort-logo.jpeg" alt="Snort 3" height="50" />
   &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="https://documentation.wazuh.com/assets/img/logo.png" alt="Wazuh" height="50" />
   &nbsp;&nbsp;&nbsp;&nbsp;
