@@ -12,7 +12,7 @@ A self-hosted SOC detection pipeline mapping real attack traffic to MITRE ATT&CK
   &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="https://assets.ubuntu.com/v1/49a1a858-ubuntu-logo.svg" alt="Ubuntu" height="50" />
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="http://www.postfix.org/images/postfix-logo.jpg" alt="Postfix" height="50" />
+  
 </div>
 
 ## Architecture Overview
