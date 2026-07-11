@@ -19,14 +19,6 @@ A self-hosted Security Operations Center (SOC) detection pipeline mapping real a
 
 ---
 
-## ✨ Project Highlights
-- **Full MITRE Mapping:** Direct correlation between network events and ATT&CK framework techniques.
-- **Automated Response:** Zero-touch incident notification via email with PDF reports.
-- **Lab-Ready:** Architected for fast setup on VirtualBox host-only networks.
-- **Snort 3 Optimized:** High-performance detection with reduced false-positive noise.
-
----
-
 ## 🛠 Tech Stack
 <div align="center">
   <table align="center" border="0">
