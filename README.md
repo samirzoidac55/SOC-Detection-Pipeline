@@ -1,83 +1,118 @@
 # SOC Detection Pipeline
 
-A self-hosted SOC detection pipeline mapping real attack traffic to MITRE ATT&CK using Snort IDS + Wazuh SIEM, with automated email/PDF incident alerting.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Status: Stable](https://img.shields.io/badge/Status-Stable-brightgreen)]()
 
-## Tech Stack
+A self-hosted Security Operations Center (SOC) detection pipeline mapping real attack traffic to **MITRE ATT&CK** techniques using **Snort IDS** and **Wazuh SIEM**, featuring automated incident response through email and PDF reporting.
+
+---
+
+## 📑 Table of Contents
+- [Tech Stack](#tech-stack)
+- [Architecture Overview](#architecture-overview)
+- [How it Works](#how-it-works)
+- [MITRE ATT&CK Coverage](#mitre-attck-coverage)
+- [Setup Instructions](#setup-instructions)
+- [Known Issues & Lessons](#known-issues--lessons)
+- [Roadmap](#roadmap)
+- [Project Screenshots](#project-screenshots)
+
+---
+
+## 🛠 Tech Stack
 <div align="center">
-  <img src="Assets/snort-logo.jpeg" alt="Snort 3" height="50" />
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="Assets/wazuh-logo.png" alt="Wazuh" height="50" />
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="Assets/mitre-logo.png" alt="MITRE ATT&CK" height="50" />
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="Assets/postfix-logo.png" alt="Postfix" height="50" />
+  <table align="center" border="0">
+    <tr>
+      <td align="center" width="150">
+        <img src="Assets/snort-logo.jpeg" alt="Snort 3" height="50" /><br>
+        <strong>Snort 3</strong>
+      </td>
+      <td align="center" width="150">
+        <img src="Assets/wazuh-logo.png" alt="Wazuh" height="50" /><br>
+        <strong>Wazuh</strong>
+      </td>
+      <td align="center" width="150">
+        <img src="Assets/mitre-logo.png" alt="MITRE ATT&CK" height="50" /><br>
+        <strong>ATT&CK</strong>
+      </td>
+      <td align="center" width="150">
+        <img src="Assets/postfix-logo.png" alt="Postfix" height="50" /><br>
+        <strong>Postfix</strong>
+      </td>
+    </tr>
+  </table>
 </div>
 
-## Architecture Overview
+---
+
+## 🏗 Architecture Overview
 The lab consists of three virtual machines running on a VirtualBox host-only network (`192.168.56.x`):
-- **SOC Server (192.168.56.101):** Runs Snort IDS, Wazuh Manager, and Postfix for alert relay.
-- **Kali Attacker (192.168.56.102):** Used for generating controlled attack traffic.
-- **Victim (192.168.56.103):** An Ubuntu machine running the Wazuh Agent.
 
-## How it Works
-1. Attack traffic is generated from the Kali machine.
-2. The Snort IDS detects the traffic based on custom rules and writes an alert to `alert_fast.txt`.
-3. The Wazuh Manager decodes the alert via `snort3-alert-fast`.
-4. The alert matches base rule `100100`, and child rules append relevant MITRE ATT&CK tags.
-5. If the alert level is >= 12, Postfix triggers an email containing a PDF incident report.
+*   **SOC Server (192.168.56.101):** Runs Snort IDS, Wazuh Manager, and Postfix for alert relay.
+*   **Kali Attacker (192.168.56.102):** Used for generating controlled attack traffic.
+*   **Victim (192.168.56.103):** An Ubuntu machine running the Wazuh Agent.
 
-## MITRE ATT&CK Coverage
+## ⚙️ How it Works
+1.  **Attack:** Traffic generated from the Kali machine.
+2.  **Detection:** Snort IDS detects malicious traffic and logs to `alert_fast.txt`.
+3.  **Correlation:** Wazuh Manager decodes the alert via `snort3-alert-fast`.
+4.  **Enrichment:** Alert matches base rule `100100`, child rules append relevant **MITRE ATT&CK** tags.
+5.  **Alerting:** If alert level >= 12, Postfix triggers an email with a PDF incident report.
 
-| Rule ID | Snort SID | Detection | MITRE Technique | Tactic | Status |
+## 🛡 MITRE ATT&CK Coverage
+
+| Rule ID | Snort SID | Detection | Technique | Tactic | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | 100101 | 1000001 | ICMP Ping | T1046 | Discovery | Validated |
 | 100102 | 1000003 | TCP Scan | T1046 | Discovery | Validated |
 | 100103 | 1000002 | SSH Connection Attempt | T1021.004 | Lateral Movement | Validated |
 | 100105 | N/A | SSH Brute Force | T1110 | Credential Access | Validated |
 
-## Setup Instructions
+---
+
+## 🚀 Setup Instructions
 
 ### 1. Environment Preparation
-- Install VirtualBox.
-- Create three VMs (SOC Server, Kali, Victim) on a Host-Only adapter.
-- Configure static IP addresses (e.g., `192.168.56.x/24`).
+*   Install VirtualBox.
+*   Create three VMs on a Host-Only adapter.
+*   Configure static IP addresses (e.g., `192.168.56.x/24`).
 
-### 2. SOC Server Installation
-- **Snort IDS:** Install Snort 3 and configure interface monitoring.
-- **Wazuh Manager:** Install and configure the manager to receive alerts.
-- **Postfix:** Configure SMTP for automated alert relay.
+### 2. Component Installation
+*   **Snort IDS:** Install Snort 3 and configure interface monitoring.
+*   **Wazuh Manager:** Install and configure the manager.
+*   **Postfix:** Configure SMTP for automated alert relay.
 
-### 3. Agent & Rules Configuration
-- **Wazuh Agent:** Install on the Victim machine and connect to the Manager.
-- **Snort Rules:** Copy custom rules to `/usr/local/etc/snort/rules/local.rules`.
-- **Wazuh Rules:** Add custom decoders and rules to `/var/ossec/etc/rules/local_rules.xml`.
+### 3. Agent & Rules
+*   Install Wazuh Agent on the Victim machine.
+*   Add custom rules to Snort and Wazuh (`local.rules`, `local_rules.xml`).
 
 ### 4. Verification
-- Use the Kali machine to generate traffic and confirm alerts appear in the Wazuh dashboard and email notifications.
+*   Use Kali to generate traffic and confirm alerts in the Wazuh dashboard.
 
-## Known Issues / Lessons Learned
-- Tuned out `arp_spoof` and `port_scan` false positives from Snort's built-in inspectors to reduce noise.
-- Discovered and noted a packet-truncation warning ("IPv4 datagram length > captured length") affecting content-based rule matching.
+---
 
-## Roadmap / Future Work (NOT YET BUILT)
-- Wazuh File Integrity Monitoring for persistence/defense evasion detection (T1053, T1098, T1070)
-- TheHive + Cortex for incident case management
-- Azure cloud migration
+> **💡 Known Issues & Lessons**
+> * Tuned out `arp_spoof` and `port_scan` false positives to reduce noise.
+> * Discovered packet-truncation issues affecting content-based rule matching.
 
-## Project Screenshots
+---
 
-### Network Architecture
-![Network Architecture](screenshots/00_architecture.png)
+## 🗺 Roadmap
+- [ ] Wazuh File Integrity Monitoring (FIM).
+- [ ] Integration with TheHive + Cortex.
+- [ ] Azure Cloud migration.
 
-### Attack Simulation
-![ICMP Attack](screenshots/01_icmp_attack.png)
-![TCP Scan Attack](screenshots/02_tcp_scan_attack.png)
+---
 
+## 📸 Project Screenshots
 
-### Detection & Logs
-![Snort Logs](screenshots/04_snort_logs.png)
-![Wazuh Alerts](screenshots/05_wazuh_alerts.png)
+### Network & Simulation
+| Architecture | ICMP Attack | TCP Scan |
+| :---: | :---: | :---: |
+| ![Arch](screenshots/00_architecture.png) | ![ICMP](screenshots/01_icmp_attack.png) | ![TCP](screenshots/02_tcp_scan_attack.png) |
 
-### Incident Alerting (SMTP/PDF)
-![Email Alert](screenshots/06_email_alert.png)
-![PDF Report](screenshots/07_pdf_report.png)
+### Detection & Incident Response
+*   **Snort Logs:** `screenshots/04_snort_logs.png`
+*   **Wazuh Alerts:** `screenshots/05_wazuh_alerts.png`
+*   **Email Alert:** `screenshots/06_email_alert.png`
+*   **PDF Report:** `screenshots/07_pdf_report.png`
