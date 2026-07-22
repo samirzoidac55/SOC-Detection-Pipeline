@@ -91,9 +91,7 @@ The lab consists of three virtual machines running on a VirtualBox host-only net
 
 ---
 
-> **💡 Known Issues & Lessons**
-> * Tuned out `arp_spoof` and `port_scan` false positives to reduce noise.
-> * Discovered packet-truncation issues affecting content-based rule matching.
+
 
 
 ## 📸 Project Screenshots
