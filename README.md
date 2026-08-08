@@ -54,6 +54,8 @@ The lab consists of three virtual machines running on a VirtualBox host-only net
 *   **Kali Attacker (192.168.56.102):** Used for generating controlled attack traffic.
 *   **Victim (192.168.56.103):** An Ubuntu machine running the Wazuh Agent.
 
+![Architecture](screenshots/00_architecture.png)
+
 ## ⚙️ How it Works
 1.  **Attack:** Traffic generated from the Kali machine.
 2.  **Detection:** Snort IDS detects malicious traffic and logs to `alert_fast.txt`.
@@ -97,9 +99,6 @@ The lab consists of three virtual machines running on a VirtualBox host-only net
 
 
 ## 📸 Project Screenshots
-
-### Architecture
-![Architecture](screenshots/00_architecture.png)
 
 ### Attacks
 ![Attacks](screenshots/attacks.png)
