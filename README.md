@@ -97,9 +97,9 @@ The lab consists of three virtual machines running on a VirtualBox host-only net
 ## 📸 Project Screenshots
 
 ### Network & Simulation
-| Architecture | ICMP Attack | TCP Scan |
-| :---: | :---: | :---: |
-| ![Arch](screenshots/00_architecture.png) | ![ICMP](screenshots/01_icmp_attack.png) | ![TCP](screenshots/02_tcp_scan_attack.png) |
+| Architecture | Attacks |
+| :---: | :---: |
+| ![Arch](screenshots/00_architecture.png) | ![Attacks](screenshots/attacks.png) |
 
 ### Detection & Incident Response
 *   **Snort Logs:** ![Snort Logs](screenshots/04_snort_logs.png)
