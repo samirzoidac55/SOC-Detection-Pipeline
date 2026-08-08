@@ -96,8 +96,20 @@ The lab consists of three virtual machines running on a VirtualBox host-only net
 
 ## 📸 Project Screenshots
 
-| | |
-| :--- | :--- |
-| **Architecture**<br>![Architecture](screenshots/00_architecture.png) | **Attacks**<br>![Attacks](screenshots/attacks.png) |
-| **Snort Logs**<br>![Snort Logs](screenshots/04_snort_logs.png) | **Wazuh ICMP Detection**<br>![Wazuh ICMP](screenshots/wazuh_icmp_scan_detection.png) |
-| **Wazuh TCP Detection**<br>![Wazuh TCP](screenshots/wazuh_tcp_scan_detectionn.png) | **Wazuh SSH Detection**<br>![Wazuh SSH](screenshots/wazuh_ssh_attack_detectionn.png) |
+### Architecture
+![Architecture](screenshots/00_architecture.png)
+
+### Attacks
+![Attacks](screenshots/attacks.png)
+
+### Snort Logs
+![Snort Logs](screenshots/04_snort_logs.png)
+
+### Wazuh ICMP Detection
+![Wazuh ICMP](screenshots/wazuh_icmp_scan_detection.png)
+
+### Wazuh TCP Detection
+![Wazuh TCP](screenshots/wazuh_tcp_scan_detectionn.png)
+
+### Wazuh SSH Detection
+![Wazuh SSH](screenshots/wazuh_ssh_attack_detectionn.png)
