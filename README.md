@@ -45,6 +45,11 @@ A self-hosted Security Operations Center (SOC) detection pipeline mapping real a
 
 ---
 
+## 🧩 Sequence Diagram
+![Sequence Diagram](screenshots/sequence_diagram.png)
+
+---
+
 ## 🏗 Architecture Overview
 The lab consists of three virtual machines running on a VirtualBox host-only network (`192.168.56.x`):
 
