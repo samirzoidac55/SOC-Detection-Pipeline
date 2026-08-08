@@ -1,4 +1,4 @@
-# SOC Detection Pipeline
+# SOC Detection Pipeline: Snort IDS + Wazuh SIEM with MITRE ATT&CK Mapping and Automated Incident Response
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Status: Stable](https://img.shields.io/badge/Status-Stable-brightgreen)]()
