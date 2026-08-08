@@ -1,4 +1,4 @@
-# SOC Detection Pipeline
+# SOC Detection Pipeline: Snort IDS + Wazuh SIEM with MITRE ATT&CK Mapping and Automated Incident Response
 
 A self-hosted Security Operations Center (SOC) detection pipeline mapping real attack traffic to **MITRE ATT&CK** techniques using **Snort IDS** and **Wazuh SIEM**, featuring automated incident response through email and PDF reporting.
 
