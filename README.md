@@ -102,7 +102,7 @@ The lab consists of three virtual machines running on a VirtualBox host-only net
 | ![Arch](screenshots/00_architecture.png) | ![ICMP](screenshots/01_icmp_attack.png) | ![TCP](screenshots/02_tcp_scan_attack.png) |
 
 ### Detection & Incident Response
-*   **Snort Logs:** `screenshots/04_snort_logs.png`
+*   **Snort Logs:** ![Snort Logs](screenshots/04_snort_logs.png)
 *   **Wazuh Alerts:** `screenshots/05_wazuh_alerts.png`
 *   **Email Alert:** `screenshots/06_email_alert.png`
 *   **PDF Report:** `screenshots/07_pdf_report.png`
