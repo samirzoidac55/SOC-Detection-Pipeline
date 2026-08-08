@@ -6,12 +6,11 @@ A self-hosted Security Operations Center (SOC) detection pipeline mapping real a
 
 ## 📑 Table of Contents
 - [Tech Stack](#tech-stack)
+- [Sequence Diagram](#sequence-diagram)
 - [Architecture Overview](#architecture-overview)
 - [How it Works](#how-it-works)
 - [MITRE ATT&CK Coverage](#mitre-attck-coverage)
 - [Setup Instructions](#setup-instructions)
-- [Known Issues & Lessons](#known-issues--lessons)
-- [Roadmap](#roadmap)
 - [Project Screenshots](#project-screenshots)
 
 ---
