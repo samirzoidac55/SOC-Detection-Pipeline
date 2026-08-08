@@ -113,3 +113,9 @@ The lab consists of three virtual machines running on a VirtualBox host-only net
 
 ### Wazuh SSH Detection
 ![Wazuh SSH](screenshots/wazuh_ssh_attack_detectionn.png)
+
+### Email Alert
+![Email Alert](screenshots/email_alert.png)
+
+### PDF Report
+![PDF Report](screenshots/pdf_alert.png)
