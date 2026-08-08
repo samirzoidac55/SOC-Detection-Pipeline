@@ -1,8 +1,5 @@
 # SOC Detection Pipeline
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Status: Stable](https://img.shields.io/badge/Status-Stable-brightgreen)]()
-
 A self-hosted Security Operations Center (SOC) detection pipeline mapping real attack traffic to **MITRE ATT&CK** techniques using **Snort IDS** and **Wazuh SIEM**, featuring automated incident response through email and PDF reporting.
 
 ---
