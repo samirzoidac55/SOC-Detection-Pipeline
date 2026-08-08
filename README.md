@@ -96,13 +96,11 @@ The lab consists of three virtual machines running on a VirtualBox host-only net
 
 ## 📸 Project Screenshots
 
-### Network & Simulation
-| Architecture | Attacks |
-| :---: | :---: |
-| ![Arch](screenshots/00_architecture.png) | ![Attacks](screenshots/attacks.png) |
-
-### Detection & Incident Response
-*   **Snort Logs:** ![Snort Logs](screenshots/04_snort_logs.png)
-*   **Wazuh Alerts:** `screenshots/05_wazuh_alerts.png`
-*   **Email Alert:** `screenshots/06_email_alert.png`
-*   **PDF Report:** `screenshots/07_pdf_report.png`
+| Category | Screenshot |
+| :--- | :--- |
+| **Architecture** | ![Architecture](screenshots/00_architecture.png) |
+| **Attacks** | ![Attacks](screenshots/attacks.png) |
+| **Snort Logs** | ![Snort Logs](screenshots/04_snort_logs.png) |
+| **Wazuh Alerts** | ![Wazuh Alerts](screenshots/05_wazuh_alerts.png) |
+| **Email Alert** | ![Email Alert](screenshots/06_email_alert.png) |
+| **PDF Report** | ![PDF Report](screenshots/07_pdf_report.png) |
