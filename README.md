@@ -52,7 +52,7 @@ The lab consists of three virtual machines running on a VirtualBox host-only net
 
 *   **SOC Server (192.168.56.101):** Runs Snort IDS, Wazuh Manager, and Postfix for alert relay.
 *   **Kali Attacker (192.168.56.102):** Used for generating controlled attack traffic.
-*   **Victim (192.168.56.103):** An Ubuntu machine running the Wazuh Agent.
+*   **Victim (192.168.56.103):** An Ubuntu-based virtual machine running the Wazuh Agent.
 
 ![Architecture](screenshots/00_architecture.png)
 
@@ -71,14 +71,13 @@ The lab consists of three virtual machines running on a VirtualBox host-only net
 | 100102 | 1000003 | TCP Scan | T1046 | Discovery | Validated |
 | 100103 | 1000002 | SSH Connection Attempt | T1021.004 | Lateral Movement | Validated |
 
-
 ---
 
 ## 🚀 Setup Instructions
 
 ### 1. Environment Preparation
 *   Install VirtualBox.
-*   Create three VMs on a Host-Only adapter.
+*   Create three virtual machines on a Host-Only adapter.
 *   Configure static IP addresses (e.g., `192.168.56.x/24`).
 
 ### 2. Component Installation
@@ -94,9 +93,6 @@ The lab consists of three virtual machines running on a VirtualBox host-only net
 *   Use Kali to generate traffic and confirm alerts in the Wazuh dashboard.
 
 ---
-
-
-
 
 ## 📸 Project Screenshots
 
